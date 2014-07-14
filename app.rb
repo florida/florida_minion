@@ -15,8 +15,8 @@ require 'marky_markov'
 consumer_key ENV['CONSUMER_KEY']
 consumer_secret ENV['CONSUMER_SECRET']
 
-secret ENV['SECRET']
-token ENV['TOKEN']
+secret ENV['ACCESS_SECRET']
+token ENV['ACCESS_TOKEN']
 
 PARENT_ACCOUNT = 'floriidaaa'
 
