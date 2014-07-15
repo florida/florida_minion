@@ -2,7 +2,6 @@
 # Source: http://muffinlabs.com/2013/12/03/ebook-yourself/
 #!/usr/bin/env ruby
 
-require 'debugger'
 require 'bundler/setup'
 require 'chatterbot/dsl'
 require 'marky_markov'
