@@ -105,10 +105,10 @@ verbose
 #
 # reply to any mentions
 #
-replies do |tweet|
-  reply "#USER# #{markov.generate_1_sentence}", tweet
-  did_reply = true
-end
+#replies do |tweet|
+#  reply "#USER# #{markov.generate_1_sentence}", tweet
+#  did_reply = true
+#end
 
 #
 # send out a tweet if the parent account has tweeted, or if it's been awhile
