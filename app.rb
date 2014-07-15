@@ -1,6 +1,8 @@
+#!/usr/bin/env ruby
+
 # Written By: Colin Mitchell
 # Source: http://muffinlabs.com/2013/12/03/ebook-yourself/
-#!/usr/bin/env ruby
+# Modified By: Florida Elago
 
 require 'bundler/setup'
 require 'chatterbot/dsl'
