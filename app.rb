@@ -2,11 +2,10 @@
 # Source: http://muffinlabs.com/2013/12/03/ebook-yourself/
 #!/usr/bin/env ruby
 
-require 'rubygems'
+require 'debugger'
 require 'bundler/setup'
 require 'chatterbot/dsl'
 require 'marky_markov'
-
 #
 # this is the script for the twitter bot mitchc2_ebooks
 # generated on 2013-11-26 16:31:48 -0500
@@ -118,7 +117,7 @@ end
 last_tweet = bot.config[:last_update] || Time.now - 1200000
 diff = Time.now - last_tweet
 
-if did_reply == false && (old_since_id != since_id || diff > 60 * 60)
+if did_reply == false && (old_since_id != since_id || diff > 432000)
   tweet markov.generate_1_sentence
   bot.config[:last_update] = Time.now
 end
