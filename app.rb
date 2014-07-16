@@ -62,7 +62,7 @@ while tweets.nil? || tweets.size > 0
 end
 
 
-markov = MarkyMarkov::Dictionary.new("#{PARENT_ACCOUNT}_ebooks", 3)
+markov = MarkyMarkov::Dictionary.new("#{PARENT_ACCOUNT}_ebooks")
 
 #
 # get rid of any tweets with associated URLs
