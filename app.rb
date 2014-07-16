@@ -118,7 +118,7 @@ end
 last_tweet = bot.config[:last_update] || Time.now - 1200000
 diff = Time.now - last_tweet
 
-if did_reply == false && (old_since_id != since_id || diff > 432000)
+if did_reply == false && (old_since_id != since_id || diff > 60 * 60)
   tweet markov.generate_1_sentence
   bot.config[:last_update] = Time.now
 end
