@@ -108,7 +108,9 @@ verbose
 # reply to any mentions
 #
 replies do |tweet|
-  reply "#USER# #{markov.generate_1_sentence}", tweet
+  if Random.rand(999) % 3 == 0
+    reply "#USER# #{markov.generate_1_sentence}", tweet
+  end
   did_reply = true
 end
 
