@@ -38,9 +38,9 @@ tweets = nil
 
 while tweets.nil? || tweets.size > 0
   opts = {
-    :count => 200,
+    :count => 8000,
     :exclude_replies => true,
-    :include_rts => false,
+    :include_rts => true,
     :trim_user => true
   }
 
