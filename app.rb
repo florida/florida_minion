@@ -3,14 +3,14 @@
 # Written By: Colin Mitchell
 # Source: http://muffinlabs.com/2013/12/03/ebook-yourself/
 # Modified By: Florida Elago
-
-require 'bundler/setup'
-require 'chatterbot/dsl'
-require 'marky_markov'
 #
 # this is the script for the twitter bot mitchc2_ebooks
 # generated on 2013-11-26 16:31:48 -0500
 #
+
+require 'bundler/setup'
+require 'chatterbot/dsl'
+require 'marky_markov'
 
 consumer_key ENV['CONSUMER_KEY']
 consumer_secret ENV['CONSUMER_SECRET']
@@ -21,7 +21,6 @@ token ENV['ACCESS_TOKEN']
 PARENT_ACCOUNT = 'floriidaaa'
 
 old_since_id = since_id
-
 
 #
 # load in tweets. if this is the first run of the script, it will
@@ -67,16 +66,16 @@ markov = MarkyMarkov::Dictionary.new("#{PARENT_ACCOUNT}_ebooks")
 #
 # get rid of any tweets with associated URLs
 #
-all_tweets = all_tweets.flatten.reject { |t|
+all_tweets = all_tweets.flatten.reject do |t|
   t.urls.size > 0
-}
+end
 
 highest_id = 0
 
 #
 # load new tweets into the database
 #
-all_tweets.each { |t|
+all_tweets.each do |t|
   if t.id > highest_id
     highest_id = t.id
   end
@@ -89,7 +88,7 @@ all_tweets.each { |t|
   puts txt
 
   markov.parse_string txt
-}
+end
 
 markov.parse_file "corpus.txt"
 
@@ -107,10 +106,10 @@ did_reply = false
 verbose
 
 #
-# reply to any mentions
+# reply to mentions sometimes hence Random.rand(10) % 3 == 0
 #
 replies do |tweet|
-  if Random.rand(999) % 3 == 0
+  if Random.rand(10) % 3 == 0
     reply "#USER# #{markov.generate_1_sentence}", tweet
   end
   did_reply = true
