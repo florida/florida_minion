@@ -91,6 +91,8 @@ all_tweets.each { |t|
   markov.parse_string txt
 }
 
+markov.parse_file "corpus.txt"
+
 #
 # update the last tweet id
 #
